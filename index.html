@@ -9,9 +9,9 @@
     :root {
       --ink:#17243a; --muted:#657184; --line:#dce3ec; --panel:#ffffff;
       --navy:#19335c; --blue:#356fd6; --cyan:#e8f0ff; --green:#13875f;
-      --amber:#b36800; --red:#bd3f3f; --bg:#f3f6fa; --shadow:0 10px 30px rgba(32,50,82,.08);
+      --purple:#6847c7; --orange:#dd7418; --teal:#087f8c; --amber:#b36800; --red:#bd3f3f; --bg:#eef3f9; --shadow:0 10px 30px rgba(32,50,82,.09);
     }
-    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+    *{box-sizing:border-box} body{margin:0;background:linear-gradient(180deg,#edf4ff 0,#f5f7fb 280px,var(--bg) 100%);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
     button,select,input{font:inherit} .shell{max-width:1240px;margin:auto;padding:24px}
     header{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:20px}
     h1{font-size:clamp(1.45rem,3vw,2.1rem);margin:0 0 6px;letter-spacing:-.03em} h2{font-size:1.05rem;margin:0}
@@ -19,17 +19,21 @@
     button{border:0;border-radius:10px;padding:10px 14px;background:var(--navy);color:#fff;font-weight:700;cursor:pointer}
     button:hover{background:#112746} button:disabled{opacity:.6;cursor:wait}
     .status{display:inline-flex;gap:7px;align-items:center;color:var(--muted);font-size:.82rem;white-space:nowrap}.dot{width:8px;height:8px;border-radius:50%;background:var(--amber)}.dot.ok{background:var(--green)}.dot.bad{background:var(--red)}
-    .filters{display:grid;grid-template-columns:repeat(4,minmax(140px,1fr));gap:12px;background:var(--panel);padding:14px;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);margin-bottom:16px}
+    .filters{display:grid;grid-template-columns:repeat(5,minmax(130px,1fr));gap:12px;background:linear-gradient(135deg,#f0f6ff,#fbfdff);padding:14px;border:1px solid #bcd0ee;border-left:5px solid var(--blue);border-radius:16px;box-shadow:var(--shadow);margin-bottom:16px}
     label{display:grid;gap:6px;color:var(--muted);font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
     select,input{width:100%;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--ink);padding:9px 10px;outline:none} select:focus,input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(53,111,214,.12)}
-    .kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:16px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
-    .kpi-label{font-size:.78rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em}.kpi-value{font-size:1.9rem;font-weight:800;line-height:1.15;margin:5px 0}.kpi-note{font-size:.8rem;color:var(--muted)}
+    .kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:16px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
+    .kpis .card{border-top-width:4px}.kpis .card:nth-child(1){border-top-color:var(--blue);background:#f6f9ff}.kpis .card:nth-child(2){border-top-color:var(--purple);background:#faf8ff}.kpis .card:nth-child(3){border-top-color:var(--green);background:#f4fbf7}.kpis .card:nth-child(4){border-top-color:var(--teal);background:#f2fbfc}.kpis .card:nth-child(5){border-top-color:var(--orange);background:#fff8f1}.kpis .card:nth-child(6){border-top-color:var(--red);background:#fff7f7}
+    .kpi-label{font-size:.78rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em}.kpi-value{font-size:1.9rem;font-weight:800;line-height:1.15;margin:5px 0}.kpi-value.compact{font-size:1rem;line-height:1.35;margin-top:8px}.kpi-note{font-size:.8rem;color:var(--muted)}
     .grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.75fr);gap:16px;margin-bottom:16px}.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-    .hierarchy-card{margin-bottom:16px}.city-hierarchy-wrap{margin-top:24px;padding-top:22px;border-top:1px solid var(--line)}.city-hierarchy-wrap>h2{margin-bottom:14px}.city-hierarchy{padding:16px 0 8px;border-top:1px dashed #d8e0ea}.city-hierarchy:first-of-type{border-top:0;padding-top:4px}.city-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}.city-title h3{margin:0;font-size:.98rem}.city-title span{font-size:.76rem;color:var(--muted)}
     .tree{overflow-x:auto;padding:6px 2px 8px}.level{display:flex;justify-content:center;gap:10px;position:relative;margin-bottom:28px;min-width:650px}.level:last-child{margin-bottom:0}.level:not(:last-child)::after{content:"";position:absolute;left:50%;bottom:-22px;width:1px;height:16px;background:#9eb0c8}
     .node{min-width:132px;text-align:center;border:1px solid var(--line);border-radius:12px;background:#fff;padding:12px}.node.primary{background:var(--navy);border-color:var(--navy);color:#fff}.node.open{border-color:#9bd8c0;background:#eefaf5}.node.warn{border-color:#f0c784;background:#fff8eb}.node.danger{border-color:#e8adad;background:#fff1f1}.node strong{display:block;font-size:1.45rem}.node span{font-size:.77rem;color:var(--muted)}.node.primary span{color:#d8e5f9}.node small{display:block;color:var(--muted);font-size:.7rem;margin-top:3px}.node.primary small{color:#bdd0ed}
-    .bars{display:grid;gap:12px}.bar-row{display:grid;grid-template-columns:120px 1fr 44px;gap:9px;align-items:center;font-size:.82rem}.bar-label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.track{height:9px;background:#edf1f6;border-radius:99px;overflow:hidden}.fill{height:100%;background:var(--blue);border-radius:99px}.bar-value{text-align:right;font-weight:700}
-    .table-wrap{overflow:auto;max-height:430px;border:1px solid var(--line);border-radius:12px}table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:820px}th{position:sticky;top:0;background:#eef3f9;color:#4b5d76;text-align:left;padding:10px;border-bottom:1px solid var(--line);z-index:1}td{padding:10px;border-bottom:1px solid #edf1f5;vertical-align:top}tr:last-child td{border-bottom:0}.pill{display:inline-block;border-radius:999px;padding:3px 8px;font-weight:700;font-size:.72rem;background:#eef2f7}.pill.yes{background:#e6f7ef;color:#0d704d}.pill.no{background:#fff0f0;color:#a72e2e}.empty{padding:30px;text-align:center;color:var(--muted)}
+    .insights{display:grid;gap:10px}.insight{border-left:4px solid var(--blue);background:#f7f9fc;border-radius:8px;padding:11px 12px}.insight strong{display:block;font-size:.9rem;margin-bottom:3px}.insight span{font-size:.8rem;color:var(--muted);line-height:1.45}.insight.alert{border-color:var(--red)}.insight.good{border-color:var(--green)}
+    .bars{display:grid;gap:12px}.bar-row{display:grid;grid-template-columns:170px 1fr 50px;gap:10px;align-items:center;font-size:.86rem}.bar-label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:650}.track{height:11px;background:#fde7d3;border-radius:99px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,var(--orange),#ef9b36);border-radius:99px}.bar-value{text-align:right;font-weight:800;color:#9f4b08}
+    .table-wrap{overflow:auto;max-height:620px;border:1px solid var(--line);border-radius:12px}table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:1750px}th{position:sticky;top:0;background:#eef3f9;color:#4b5d76;text-align:left;padding:10px;border-bottom:1px solid var(--line);z-index:2}td{padding:10px;border-bottom:1px solid #edf1f5;vertical-align:top}tr:last-child td{border-bottom:0}.pill{display:inline-block;border-radius:999px;padding:3px 8px;font-weight:700;font-size:.72rem;background:#eef2f7}.pill.yes{background:#e6f7ef;color:#0d704d}.pill.no{background:#fff0f0;color:#a72e2e}.empty{padding:30px;text-align:center;color:var(--muted)}
+    .photos{display:flex;gap:8px;min-width:290px}.photo{display:grid;gap:4px;color:var(--muted);text-decoration:none;font-size:.7rem;text-align:center}.photo img{width:90px;height:68px;display:block;object-fit:cover;border:1px solid var(--line);border-radius:9px;background:#eef2f7}.photo:hover img{border-color:var(--blue);box-shadow:0 0 0 2px rgba(53,111,214,.12)}.no-photo{width:90px;height:68px;display:grid;place-items:center;border:1px dashed #c8d1de;border-radius:9px;background:#f7f9fc;color:#8a95a5;font-size:.68rem;line-height:1.2;text-align:center}.stock{font-weight:800;font-size:1rem}.placement{max-width:150px;line-height:1.35}.billing{font-weight:800;white-space:nowrap}.money{color:var(--green)}
+    .city-wrap{overflow:auto;border:1px solid #cfc4f3;border-radius:12px}.city-table{min-width:1000px}.city-table td,.city-table th{text-align:right}.city-table td:first-child,.city-table th:first-child{text-align:left}.city-table th{background:#eee9ff;color:#45318c}.city-table tfoot td{position:sticky;bottom:0;background:#e4dcff;font-weight:800;border-top:2px solid #8f7bd4}.hierarchy-city{margin-top:24px;padding-top:20px;border-top:1px solid #d5ccf3}
+    .section-hierarchy{border-top:5px solid var(--purple);background:linear-gradient(180deg,#fcfbff,#fff)}.section-hierarchy .section-head h2{color:#4d349b}.section-competitor{border-top:5px solid var(--orange);background:linear-gradient(180deg,#fff8f1,#fff);margin-bottom:16px}.section-competitor .section-head h2{color:#a85109}.section-outlets{border-top:5px solid var(--teal);background:linear-gradient(180deg,#f4fcfd,#fff)}.section-outlets .section-head h2{color:#056773}.section-outlets th{background:#dff4f6;color:#125e67}
     .error{display:none;border:1px solid #efb2b2;background:#fff1f1;color:#932b2b;padding:12px 14px;border-radius:12px;margin-bottom:16px;font-size:.88rem}.error.show{display:block}
     footer{text-align:center;color:var(--muted);font-size:.75rem;padding:6px 0 20px}
     @media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.filters{grid-template-columns:repeat(2,1fr)}}
@@ -48,6 +52,7 @@
       <label>Town<select id="townFilter"><option value="">All towns</option></select></label>
       <label>User<select id="userFilter"><option value="">All users</option></select></label>
       <label>Outlet type<select id="typeFilter"><option value="">All outlet types</option></select></label>
+      <label>Outlet status<select id="statusFilter"><option value="">All statuses</option></select></label>
       <label>Search outlet<input id="searchFilter" type="search" placeholder="Name or RTR"></label>
     </section>
 
@@ -57,26 +62,25 @@
       <article class="card"><div class="kpi-label">Open outlets</div><div class="kpi-value" id="kpiOpen">—</div><div class="kpi-note" id="openRate">Among verified</div></article>
       <article class="card"><div class="kpi-label">Chocomalt available</div><div class="kpi-value" id="kpiAvailable">—</div><div class="kpi-note" id="availabilityRate">Among open</div></article>
       <article class="card"><div class="kpi-label">Product visible</div><div class="kpi-value" id="kpiVisible">—</div><div class="kpi-note" id="visibilityRate">Among open</div></article>
+      <article class="card"><div class="kpi-label">Latest update</div><div class="kpi-value compact" id="latestUpdate">—</div><div class="kpi-note" id="latestUpdateNote">Latest submission</div></article>
     </section>
 
-    <section class="card hierarchy-card">
-      <div class="section-head"><h2>Outlet hierarchy</h2><span class="meta">Counts follow the verified funnel</span></div>
-      <div class="tree" id="tree"></div>
-
-      <div class="city-hierarchy-wrap">
-        <h2>City-wise hierarchy</h2>
-        <div id="cityHierarchies"></div>
-      </div>
+    <section class="card section-hierarchy" style="margin-bottom:16px">
+        <div class="section-head"><h2>Outlet hierarchy</h2><span class="meta">Counts follow the verified funnel</span></div>
+        <div class="tree" id="tree"></div>
+        <div class="hierarchy-city">
+          <div class="section-head"><h2>City-wise cut</h2><span class="meta">Live operational and billing summary</span></div>
+          <div class="city-wrap"><table class="city-table"><thead><tr><th>City</th><th>Listed</th><th>Verified</th><th>Open</th><th>Closed</th><th>Doesn’t exist</th><th>Available</th><th>Not available</th><th>Invoice qty</th><th>Net amount</th></tr></thead><tbody id="cityRows"></tbody><tfoot id="cityTotal"></tfoot></table></div>
+        </div>
     </section>
 
-    <section class="card" style="margin-bottom:16px">
-      <div class="section-head"><h2>Competitor presence</h2><span class="meta">Open, verified outlets</span></div>
-      <div class="bars" id="competitorBars"></div>
+    <section class="card section-competitor">
+      <div class="section-head"><h2>Competitor presence by brand</h2><span class="meta">Source: Competitor_Brands_Available · Open, verified outlets</span></div><div class="bars" id="competitorBars"></div>
     </section>
 
-    <section class="card">
+    <section class="card section-outlets">
       <div class="section-head"><h2>Outlet details</h2><span class="meta" id="tableCount">—</span></div>
-      <div class="table-wrap"><table><thead><tr><th>Outlet</th><th>Town</th><th>RTR</th><th>Verified</th><th>Status</th><th>Available</th><th>Previously billed</th><th>User</th><th>Submitted</th></tr></thead><tbody id="outletRows"></tbody></table></div>
+      <div class="table-wrap"><table><thead><tr><th>Photos</th><th>Outlet</th><th>Invoice date</th><th>Total qty</th><th>Net amount</th><th>Category</th><th>Town</th><th>RTR</th><th>Verified</th><th>Status</th><th>Available</th><th>Available stock</th><th>Shelf / placement</th><th>Previously billed</th><th>User</th><th>Submitted</th></tr></thead><tbody id="outletRows"></tbody></table></div>
     </section>
     <footer>Source: live Google Sheet · Automatically refreshes every 5 minutes</footer>
   </main>
@@ -90,6 +94,7 @@
     const norm = value => clean(value).toLowerCase().replace(/[’']/g, "'").replace(/\s+/g, ' ');
     const isYes = value => ['yes','y','true','1'].includes(norm(value));
     const isNo = value => ['no','n','false','0'].includes(norm(value));
+    const isAvailable = value => !clean(value) || isYes(value);
     const pct = (part,total) => total ? `${Math.round(part*100/total)}%` : '0%';
     const esc = value => clean(value).replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
     const statusKey = value => {
@@ -108,7 +113,7 @@
         try {
           if(response.status !== 'ok') throw new Error(response.errors?.[0]?.detailed_message || 'Google Sheet returned an error.');
           const cols = response.table.cols.map((c,i) => c.label || c.id || `Column_${i+1}`);
-          allRows = response.table.rows.map(r => Object.fromEntries(cols.map((h,i) => [h, r.c[i]?.f ?? r.c[i]?.v ?? '']))).filter(r => clean(r.Verified) || clean(r.Submission_Time) || clean(r.Name_of_Outlet) || clean(r.RTR) || clean(r.Town) || clean(r.Shop_Status));
+          allRows = response.table.rows.map(r => Object.fromEntries(cols.map((h,i) => [h, r.c[i]?.f ?? r.c[i]?.v ?? '']))).filter(r => clean(r.Name_of_Outlet));
           fillFilters(); render();
           $('liveText').textContent = `Live · ${new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})}`; $('liveDot').className = 'dot ok';
         } catch(err){ showError(err.message); }
@@ -122,69 +127,57 @@
     function showError(message){ clearTimeout(window.sheetTimeout); $('errorBox').textContent=message; $('errorBox').className='error show'; $('liveText').textContent='Data unavailable'; $('liveDot').className='dot bad'; $('refreshBtn').disabled=false; }
     function unique(field){ return [...new Set(allRows.map(r=>clean(r[field])).filter(Boolean))].sort((a,b)=>a.localeCompare(b)); }
     function fillSelect(id, field, first){ const el=$(id), keep=el.value; el.innerHTML=`<option value="">${first}</option>`+unique(field).map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join(''); el.value=[...el.options].some(o=>o.value===keep)?keep:''; }
-    function fillFilters(){ fillSelect('townFilter','Town','All towns'); fillSelect('userFilter','User_Name','All users'); fillSelect('typeFilter','Outlet_Type','All outlet types'); }
-    function filtered(ignoreTown=false){
-      const town=$('townFilter').value,user=$('userFilter').value,type=$('typeFilter').value,q=norm($('searchFilter').value);
-      return allRows.filter(r=>(ignoreTown||!town||clean(r.Town)===town)&&(!user||clean(r.User_Name)===user)&&(!type||clean(r.Outlet_Type)===type)&&(!q||norm(`${r.Name_of_Outlet} ${r.RTR}`).includes(q)));
+    function fillFilters(){ fillSelect('townFilter','Town','All towns'); fillSelect('userFilter','User_Name','All users'); fillSelect('typeFilter','Outlet_Type','All outlet types'); fillSelect('statusFilter','Shop_Status','All statuses'); }
+    function filtered(){
+      const town=$('townFilter').value,user=$('userFilter').value,type=$('typeFilter').value,status=$('statusFilter').value,q=norm($('searchFilter').value);
+      return allRows.filter(r=>(!town||clean(r.Town)===town)&&(!user||clean(r.User_Name)===user)&&(!type||clean(r.Outlet_Type)===type)&&(!status||clean(r.Shop_Status)===status)&&(!q||norm(`${r.Name_of_Outlet} ${r.RTR}`).includes(q)));
     }
     function node(label,count,total,cls=''){ return `<div class="node ${cls}"><strong>${count}</strong><span>${label}</span><small>${total===null?'':pct(count,total)}</small></div>`; }
-
-    // Business rule: for an open outlet, a blank availability response is treated as AVAILABLE.
-    // Only an explicit "No" is counted as not available.
-    function hierarchyStats(rows){
-      const verified=rows.filter(r=>isYes(r.Verified));
-      const open=verified.filter(r=>statusKey(r.Shop_Status)==='open');
-      const closed=verified.filter(r=>statusKey(r.Shop_Status)==='closed');
-      const missing=verified.filter(r=>statusKey(r.Shop_Status)==='missing');
-      const unknownStatus=verified.length-open.length-closed.length-missing.length;
-      const unavailable=open.filter(r=>isNo(r.Is_Chocomalt_Available));
-      const available=open.filter(r=>!isNo(r.Is_Chocomalt_Available));
-      const prevYes=unavailable.filter(r=>isYes(r.Was_Chocomalt_Billed_Previously));
-      const prevNo=unavailable.filter(r=>isNo(r.Was_Chocomalt_Billed_Previously));
-      const prevUnknown=unavailable.length-prevYes.length-prevNo.length;
-      const visible=open.filter(r=>isYes(r.Is_Chocomalt_Visible));
-      return {rows,verified,open,closed,missing,unknownStatus,available,unavailable,prevYes,prevNo,prevUnknown,visible};
-    }
-
-    function hierarchyMarkup(s){
-      return `
-        <div class="level">${node('Verified outlets',s.verified.length,null,'primary')}</div>
-        <div class="level">${node('Open',s.open.length,s.verified.length,'open')}${node('Closed',s.closed.length,s.verified.length,'warn')}${node("Doesn’t exist",s.missing.length,s.verified.length,'danger')}${s.unknownStatus?node('Status blank / other',s.unknownStatus,s.verified.length):''}</div>
-        <div class="level">${node('Chocomalt available',s.available.length,s.open.length,'open')}${node('Not available',s.unavailable.length,s.open.length,'danger')}</div>
-        <div class="level">${node('Previously billed — Yes',s.prevYes.length,s.unavailable.length,'warn')}${node('Previously billed — No',s.prevNo.length,s.unavailable.length)}${s.prevUnknown?node('Billing history blank',s.prevUnknown,s.unavailable.length,'danger'):''}</div>`;
-    }
-
-    function cityRows(baseRows, city){
-      const aliases={
-        'Mumbai':['mumbai'],
-        'Bangalore':['bangalore','bengaluru'],
-        'Ernakulam':['ernakulam','eranakulam']
-      };
-      const accepted=aliases[city]||[norm(city)];
-      return baseRows.filter(r=>accepted.includes(norm(r.Town)));
-    }
-
-    function renderCityHierarchies(){
-      const baseRows=filtered(true);
-      const cities=['Mumbai','Bangalore','Ernakulam'];
-      $('cityHierarchies').innerHTML=cities.map(city=>{
-        const cityData=cityRows(baseRows,city);
-        const s=hierarchyStats(cityData);
-        return `<section class="city-hierarchy">
-          <div class="city-title"><h3>${city}</h3><span>${cityData.length} listed outlet${cityData.length===1?'':'s'}</span></div>
-          <div class="tree">${hierarchyMarkup(s)}</div>
-        </section>`;
-      }).join('');
-    }
-
     function render(){
-      const rows=filtered(), s=hierarchyStats(rows);
-      $('kpiTotal').textContent=rows.length; $('kpiVerified').textContent=s.verified.length; $('verifiedRate').textContent=`${pct(s.verified.length,rows.length)} of submissions`;
-      $('kpiOpen').textContent=s.open.length; $('openRate').textContent=`${pct(s.open.length,s.verified.length)} of verified`; $('kpiAvailable').textContent=s.available.length; $('availabilityRate').textContent=`${pct(s.available.length,s.open.length)} of open`;
-      $('kpiVisible').textContent=s.visible.length; $('visibilityRate').textContent=`${pct(s.visible.length,s.open.length)} of open`;
-      $('tree').innerHTML=hierarchyMarkup(s);
-      renderCityHierarchies();
-      renderCompetitors(s.open); renderTable(rows);
+      const rows=filtered(), verified=rows.filter(r=>isYes(r.Verified)), open=verified.filter(r=>statusKey(r.Shop_Status)==='open');
+      const closed=verified.filter(r=>statusKey(r.Shop_Status)==='closed'), missing=verified.filter(r=>statusKey(r.Shop_Status)==='missing'), unknownStatus=verified.length-open.length-closed.length-missing.length;
+      const available=open.filter(r=>isAvailable(r.Is_Chocomalt_Available)), unavailable=open.filter(r=>isNo(r.Is_Chocomalt_Available)), unknownAvail=open.length-available.length-unavailable.length;
+      const prevYes=unavailable.filter(r=>isYes(r.Was_Chocomalt_Billed_Previously)), prevNo=unavailable.filter(r=>isNo(r.Was_Chocomalt_Billed_Previously)), prevUnknown=unavailable.length-prevYes.length-prevNo.length;
+      const visible=open.filter(r=>isYes(r.Is_Chocomalt_Visible));
+      $('kpiTotal').textContent=rows.length; $('kpiVerified').textContent=verified.length; $('verifiedRate').textContent=`${pct(verified.length,rows.length)} of submissions`;
+      $('kpiOpen').textContent=open.length; $('openRate').textContent=`${pct(open.length,verified.length)} of verified`; $('kpiAvailable').textContent=available.length; $('availabilityRate').textContent=`${pct(available.length,open.length)} of open`;
+      $('kpiVisible').textContent=visible.length; $('visibilityRate').textContent=`${pct(visible.length,open.length)} of open`;
+      const latest=[...rows].sort((a,b)=>submissionTime(b.Submission_Time)-submissionTime(a.Submission_Time))[0];
+      $('latestUpdate').textContent=latest?.Submission_Time||'—'; $('latestUpdateNote').textContent=latest?.User_Name?`By ${latest.User_Name}`:'Latest submission';
+      $('tree').innerHTML=`
+        <div class="level">${node('Verified outlets',verified.length,rows.length,'primary')}</div>
+        <div class="level">${node('Open',open.length,verified.length,'open')}${node('Closed',closed.length,verified.length,'warn')}${node("Doesn’t exist",missing.length,verified.length,'danger')}${unknownStatus?node('Status blank / other',unknownStatus,verified.length):''}</div>
+        <div class="level">${node('Chocomalt available',available.length,open.length,'open')}${node('Not available',unavailable.length,open.length,'danger')}${unknownAvail?node('Other availability value',unknownAvail,open.length,'warn'):''}</div>
+        <div class="level">${node('Previously billed — Yes',prevYes.length,unavailable.length,'warn')}${node('Previously billed — No',prevNo.length,unavailable.length)}${prevUnknown?node('Billing history blank',prevUnknown,unavailable.length,'danger'):''}</div>`;
+      renderCitywise(rows); renderCompetitors(open); renderTable(rows);
+    }
+    function numberValue(value){ const n=Number(clean(value).replace(/,/g,'')); return Number.isFinite(n)?n:0; }
+    function submissionTime(value){
+      const v=clean(value),m=v.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4}),?\s+(\d{1,2}):(\d{2})(?::(\d{2}))?\s*(AM|PM)?$/i);
+      if(!m) return Date.parse(v)||0;
+      let hour=Number(m[4]); const ap=(m[7]||'').toUpperCase(); if(ap==='PM'&&hour<12) hour+=12; if(ap==='AM'&&hour===12) hour=0;
+      return new Date(Number(m[3]),Number(m[2])-1,Number(m[1]),hour,Number(m[5]),Number(m[6]||0)).getTime();
+    }
+    function cityMetrics(rows,city){
+      const verified=rows.filter(r=>isYes(r.Verified)),open=verified.filter(r=>statusKey(r.Shop_Status)==='open');
+      return {city,listed:rows.length,verified:verified.length,open:open.length,closed:verified.filter(r=>statusKey(r.Shop_Status)==='closed').length,missing:verified.filter(r=>statusKey(r.Shop_Status)==='missing').length,available:open.filter(r=>isAvailable(r.Is_Chocomalt_Available)).length,unavailable:open.filter(r=>isNo(r.Is_Chocomalt_Available)).length,qty:rows.reduce((s,r)=>s+numberValue(r.TotQty),0),net:rows.reduce((s,r)=>s+numberValue(r.NetAmt),0)};
+    }
+    function cityRow(m){ return `<tr><td><strong>${esc(m.city)}</strong></td><td>${m.listed}</td><td>${m.verified}</td><td>${m.open}</td><td>${m.closed}</td><td>${m.missing}</td><td>${m.available}</td><td>${m.unavailable}</td><td>${quantity(m.qty)}</td><td class="money">${currency(m.net)}</td></tr>`; }
+    function renderCitywise(rows){
+      const grouped={}; rows.forEach(r=>{const city=clean(r.Town)||'Not specified'; (grouped[city]??=[]).push(r);});
+      const cities=Object.entries(grouped).map(([city,items])=>cityMetrics(items,city)).sort((a,b)=>b.verified-a.verified||a.city.localeCompare(b.city));
+      $('cityRows').innerHTML=cities.length?cities.map(cityRow).join(''):'<tr><td colspan="10" class="empty">No city data available.</td></tr>';
+      $('cityTotal').innerHTML=rows.length?cityRow(cityMetrics(rows,'Total')):'';
+    }
+    function renderInsights(s){
+      const lost=s.open.length-s.available.length, previouslyBilledShare=pct(s.prevYes.length,s.unavailable.length), closedMissing=s.closed.length+s.missing.length;
+      const notes=[];
+      notes.push({c:s.verified.length===s.rows.length?'good':'',t:'Verification coverage',x:`${s.verified.length} of ${s.rows.length} submissions are verified (${pct(s.verified.length,s.rows.length)}).`});
+      notes.push({c:closedMissing?'alert':'good',t:'Outlet validity',x:`${closedMissing} verified outlets are closed or do not exist, equal to ${pct(closedMissing,s.verified.length)} of verified records.`});
+      notes.push({c:lost?'alert':'good',t:'Availability gap',x:`Chocomalt is unavailable in ${lost} open outlets (${pct(lost,s.open.length)}).`});
+      notes.push({c:s.prevYes?'alert':'',t:'Recoverable outlets',x:`${s.prevYes} unavailable outlets were billed previously (${previouslyBilledShare} of unavailable outlets), making them the clearest recovery pool.`});
+      notes.push({c:'',t:'Visibility conversion',x:`Product is visible in ${s.visible.length} of ${s.open.length} open outlets (${pct(s.visible.length,s.open.length)}).`});
+      $('insights').innerHTML=notes.map(n=>`<div class="insight ${n.c}"><strong>${n.t}</strong><span>${n.x}</span></div>`).join('');
     }
     function renderCompetitors(open){
       const counts={}; open.forEach(r=>clean(r.Competitor_Brands_Available).split(',').map(clean).filter(Boolean).forEach(b=>counts[b]=(counts[b]||0)+1));
@@ -192,16 +185,31 @@
       $('competitorBars').innerHTML=top.length?top.map(([b,n])=>`<div class="bar-row"><span class="bar-label" title="${esc(b)}">${esc(b)}</span><span class="track"><span class="fill" style="width:${n*100/max}%"></span></span><span class="bar-value">${n}</span></div>`).join(''):'<div class="empty">No competitor data in the selected records.</div>';
     }
     function badge(value){ const c=isYes(value)?'yes':isNo(value)?'no':''; return `<span class="pill ${c}">${esc(value||'—')}</span>`; }
-    function availabilityBadge(row){
-      if(statusKey(row.Shop_Status)==='open' && !clean(row.Is_Chocomalt_Available)) return '<span class="pill yes">Yes</span>';
-      return badge(row.Is_Chocomalt_Available);
+    function availabilityDisplay(row){ return !clean(row.Is_Chocomalt_Available)&&statusKey(row.Shop_Status)==='open'?'Yes':clean(row.Is_Chocomalt_Available); }
+    function quantity(value){ const n=Number(clean(value).replace(/,/g,'')); return clean(value)&&Number.isFinite(n)?n.toLocaleString('en-IN',{maximumFractionDigits:2}):'—'; }
+    function currency(value){ const n=Number(clean(value).replace(/,/g,'')); return clean(value)&&Number.isFinite(n)?new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',minimumFractionDigits:2,maximumFractionDigits:2}).format(n):'—'; }
+    function safeUrl(value){ try{ const u=new URL(clean(value)); return ['http:','https:'].includes(u.protocol)?u.href:''; }catch{return '';} }
+    function driveThumb(value){
+      const url=safeUrl(value); if(!url) return '';
+      const match=url.match(/\/d\/([a-zA-Z0-9_-]+)/)||url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+      return match?`https://lh3.googleusercontent.com/d/${match[1]}=w240-h180-c`:url;
+    }
+    function photo(value,label){
+      const href=safeUrl(value),src=driveThumb(value);
+      return href&&src?`<a class="photo" href="${esc(href)}" target="_blank" rel="noopener noreferrer" title="Open ${esc(label)} photo"><img src="${esc(src)}" alt="${esc(label)} photo" loading="lazy" referrerpolicy="no-referrer"><span>${esc(label)}</span></a>`:`<span class="photo"><span class="no-photo">No image</span><span>${esc(label)}</span></span>`;
+    }
+    function wireImageFallbacks(){
+      document.querySelectorAll('.photo img').forEach(img=>img.addEventListener('error',()=>{
+        const fallback=document.createElement('span'); fallback.className='no-photo'; fallback.textContent='Open image'; img.replaceWith(fallback);
+      },{once:true}));
     }
     function renderTable(rows){
-      const sorted=[...rows].sort((a,b)=>clean(b.Submission_Time).localeCompare(clean(a.Submission_Time))).slice(0,250);
+      const sorted=[...rows].sort((a,b)=>submissionTime(b.Submission_Time)-submissionTime(a.Submission_Time)).slice(0,250);
       $('tableCount').textContent=`Showing ${sorted.length} of ${rows.length}`;
-      $('outletRows').innerHTML=sorted.length?sorted.map(r=>`<tr><td><strong>${esc(r.Name_of_Outlet)}</strong><br><span class="meta">${esc(r.Outlet_Type||'Type not recorded')}</span></td><td>${esc(r.Town||'—')}</td><td>${esc(r.RTR||'—')}</td><td>${badge(r.Verified)}</td><td>${badge(r.Shop_Status)}</td><td>${availabilityBadge(r)}</td><td>${badge(r.Was_Chocomalt_Billed_Previously)}</td><td>${esc(r.User_Name||'—')}</td><td>${esc(r.Submission_Time||'—')}</td></tr>`).join(''):'<tr><td colspan="9" class="empty">No outlets match the selected filters.</td></tr>';
+      $('outletRows').innerHTML=sorted.length?sorted.map(r=>`<tr><td><div class="photos">${photo(r.Outlet_Front_With_Billboard_Photo_Link,'Outlet')}${photo(r.Chocomalt_Product_Photo_Link,'Product')}${photo(r.Visi_Cooler_Photo_Link,'Cooler')}</div></td><td><strong>${esc(r.Name_of_Outlet)}</strong></td><td><span class="billing">${esc(r.InvDate||'—')}</span></td><td><span class="billing">${quantity(r.TotQty)}</span></td><td><span class="billing money">${currency(r.NetAmt)}</span></td><td>${esc(r.Outlet_Type||'—')}</td><td>${esc(r.Town||'—')}</td><td>${esc(r.RTR||'—')}</td><td>${badge(r.Verified)}</td><td>${badge(r.Shop_Status)}</td><td>${badge(availabilityDisplay(r))}</td><td><span class="stock">${esc(r.Chocomalt_Available_Stock||'—')}</span></td><td><div class="placement">${esc(r.Chocomalt_Placement||'—')}</div></td><td>${badge(r.Was_Chocomalt_Billed_Previously)}</td><td>${esc(r.User_Name||'—')}</td><td>${esc(r.Submission_Time||'—')}</td></tr>`).join(''):'<tr><td colspan="16" class="empty">No outlets match the selected filters.</td></tr>';
+      wireImageFallbacks();
     }
-    ['townFilter','userFilter','typeFilter'].forEach(id=>$(id).addEventListener('change',render)); $('searchFilter').addEventListener('input',render); $('refreshBtn').addEventListener('click',loadSheet);
+    ['townFilter','userFilter','typeFilter','statusFilter'].forEach(id=>$(id).addEventListener('change',render)); $('searchFilter').addEventListener('input',render); $('refreshBtn').addEventListener('click',loadSheet);
     loadSheet(); setInterval(loadSheet,300000);
   </script>
 </body>
